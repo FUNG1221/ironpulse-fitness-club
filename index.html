@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IronPulse Fitness Club | Los Angeles Premium Gym</title>
+
+  <meta name="description" content="IronPulse Fitness Club is a premium fitness gym in Los Angeles, California offering strength training, HIIT, boxing, personal coaching, yoga, mobility, and transformation programs." />
+  <meta name="keywords" content="Los Angeles gym, fitness club, strength training, HIIT, boxing fitness, personal training, weight loss program, IronPulse Fitness Club" />
+  <meta name="author" content="IronPulse Fitness Club" />
+
+  <meta property="og:title" content="IronPulse Fitness Club | Train Hard. Live Strong." />
+  <meta property="og:description" content="Premium American fitness club in Los Angeles built for strength, performance, and transformation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "IronPulse Fitness Club",
+    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8200 Sunset Boulevard",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90046",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-323-555-0198",
+    "email": "hello@ironpulsefitness.com",
+    "openingHours": "Mo-Fr 05:00-23:00, Sa-Su 07:00-20:00",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <style>
+    :root {
+      --black: #050505;
+      --charcoal: #111111;
+      --dark: #191919;
+      --red: #e50914;
+      --red-dark: #a80008;
+      --white: #ffffff;
+      --gray: #a7a7a7;
+      --soft: #f2f2f2;
+      --border: rgba(255,255,255,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      padding: 110px 7%;
+      position: relative;
+    }
+
+    .section-kicker {
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .section-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .section-text {
+      color: var(--gray);
+      max-width: 720px;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 26px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 18px 50px rgba(229,9,20,0.35);
+    }
+
+    .btn-red:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-4px);
+    }
+
+    .btn-outline {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-4px);
+    }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 999;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(5,5,5,0.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 30px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    nav a {
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.76);
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--red);
+    }
+
+    .hamburger {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 170px 7% 80px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.92), rgba(0,0,0,0.62), rgba(0,0,0,0.18)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    }
+
+    .hero h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(60px, 10vw, 150px);
+      line-height: 0.86;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      color: #ddd;
+      max-width: 620px;
+      font-size: 19px;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 660px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .stat {
+      padding: 26px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      font-family: 'Anton', sans-serif;
+      font-size: 42px;
+      color: var(--red);
+    }
+
+    .stat span {
+      display: block;
+      color: var(--gray);
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      justify-self: end;
+      width: min(420px, 100%);
+      background: rgba(10,10,10,0.78);
+      border: 1px solid var(--border);
+      padding: 28px;
+      transform: rotate(-2deg);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.6);
+    }
+
+    .hero-card img {
+      height: 360px;
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(20%);
+    }
+
+    .hero-card h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 32px;
+      margin-top: 20px;
+    }
+
+    .about {
+      background: linear-gradient(135deg, #090909, #171717);
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      height: 620px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0 80px 0 0;
+    }
+
+    .about-badge {
+      position: absolute;
+      right: -25px;
+      bottom: 40px;
+      background: var(--red);
+      padding: 25px;
+      max-width: 230px;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 18px 60px rgba(229,9,20,0.42);
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .highlight {
+      padding: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .highlight i {
+      color: var(--red);
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .highlight h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .highlight p {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .programs {
+      background: var(--black);
+    }
+
+    .program-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .program-card {
+      min-height: 470px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      border: 1px solid var(--border);
+    }
+
+    .program-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.95));
+      z-index: -1;
+    }
+
+    .program-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -2;
+      transition: 0.5s ease;
+    }
+
+    .program-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .program-icon {
+      width: 58px;
+      height: 58px;
+      background: var(--red);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .program-card h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 34px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .program-card p {
+      color: #ddd;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .program-card a {
+      color: var(--red);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .trainers {
+      background: #101010;
+    }
+
+    .trainer-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .trainer {
+      background: var(--black);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .trainer:hover {
+      transform: translateY(-10px);
+      border-color: var(--red);
+    }
+
+    .trainer img {
+      height: 360px;
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(35%);
+    }
+
+    .trainer-content {
+      padding: 24px;
+    }
+
+    .trainer h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    .trainer strong {
+      color: var(--red);
+      display: block;
+      margin: 8px 0;
+    }
+
+    .trainer p {
+      color: var(--gray);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .socials i {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .socials i:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .membership {
+      background:
+        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)),
+        url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1800&q=80") center/cover fixed;
+    }
+
+    .pricing {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .plan {
+      background: rgba(15,15,15,0.92);
+      border: 1px solid var(--border);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan.featured {
+      border-color: var(--red);
+      transform: scale(1.05);
+    }
+
+    .plan.featured::before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: 22px;
+      right: -45px;
+      background: var(--red);
+      padding: 8px 50px;
+      transform: rotate(35deg);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .plan h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 40px;
+      text-transform: uppercase;
+    }
+
+    .price {
+      font-size: 54px;
+      font-weight: 900;
+      margin: 20px 0;
+    }
+
+    .price span {
+      font-size: 16px;
+      color: var(--gray);
+    }
+
+    .plan ul {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .plan li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      color: #ddd;
+    }
+
+    .plan li i {
+      color: var(--red);
+      margin-right: 10px;
+    }
+
+    .transformation {
+      background: #080808;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .transform-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .transform-gallery img {
+      height: 440px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .success-list {
+      margin-top: 28px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .success-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: #ddd;
+    }
+
+    .success-item i {
+      color: var(--red);
+      margin-top: 4px;
+    }
+
+    .schedule {
+      background: #141414;
+    }
+
+    .schedule-table {
+      margin-top: 45px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 850px;
+      background: #080808;
+    }
+
+    th, td {
+      padding: 22px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--red);
+      color: var(--white);
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    td {
+      color: #ddd;
+      font-weight: 700;
+    }
+
+    .testimonials {
+      background: var(--black);
+    }
+
+    .review-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review {
+      padding: 30px;
+      background: linear-gradient(145deg, #111, #050505);
+      border: 1px solid var(--border);
+    }
+
+    .stars {
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .review p {
+      color: #ddd;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .review h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .review span {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .faq {
+      background: #101010;
+    }
+
+    .faq-wrap {
+      margin-top: 45px;
+      max-width: 950px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+      background: #070707;
+    }
+
+    .faq-question {
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.35s ease;
+      color: var(--gray);
+      line-height: 1.7;
+      padding: 0 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      padding: 0 24px 24px;
+    }
+
+    .faq-item.active i {
+      transform: rotate(45deg);
+    }
+
+    .faq-question i {
+      transition: 0.3s;
+      color: var(--red);
+    }
+
+    .contact {
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.96), rgba(0,0,0,0.8)),
+        url("https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1800&q=80") center/cover;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 45px;
+    }
+
+    .contact-form {
+      background: rgba(10,10,10,0.9);
+      border: 1px solid var(--border);
+      padding: 35px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 16px;
+      background: #151515;
+      border: 1px solid var(--border);
+      color: var(--white);
+      outline: none;
+      font-family: inherit;
+    }
+
+    textarea {
+      grid-column: 1 / -1;
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-box {
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .info-box i {
+      color: var(--red);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .info-box h4 {
+      margin-bottom: 8px;
+    }
+
+    .info-box p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .map {
+      height: 240px;
+      background:
+        linear-gradient(rgba(229,9,20,0.75), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80") center/cover;
+      display: grid;
+      place-items: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 34px;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      background: #050505;
+      padding: 70px 7% 30px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 34px;
+      margin-bottom: 40px;
+    }
+
+    footer h3, footer h4 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    footer h3 {
+      font-size: 34px;
+    }
+
+    footer h3 span {
+      color: var(--red);
+    }
+
+    footer p, footer a {
+      color: var(--gray);
+      line-height: 1.9;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    footer a:hover {
+      color: var(--red);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding-top: 22px;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    .join-sticky {
+      position: fixed;
+      right: 22px;
+      bottom: 90px;
+      z-index: 900;
+      background: var(--red);
+      color: var(--white);
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 18px 45px rgba(229,9,20,0.42);
+    }
+
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 25px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--black);
+      display: grid;
+      place-items: center;
+      z-index: 900;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      font-weight: 900;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      nav {
+        position: fixed;
+        top: 78px;
+        right: -100%;
+        width: 320px;
+        height: calc(100vh - 78px);
+        background: #050505;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px;
+        border-left: 1px solid var(--border);
+        transition: 0.35s;
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero,
+      .about,
+      .transformation,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        justify-self: start;
+      }
+
+      .program-grid,
+      .pricing,
+      .review-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trainer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      section {
+        padding: 85px 5%;
+      }
+
+      header {
+        padding: 16px 5%;
+      }
+
+      .hero {
+        padding: 140px 5% 70px;
+      }
+
+      .hero-stats,
+      .highlights,
+      .program-grid,
+      .pricing,
+      .trainer-grid,
+      .review-grid,
+      .footer-grid,
+      .form-grid,
+      .transform-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .plan.featured {
+        transform: none;
+      }
+
+      .about-image img,
+      .transform-gallery img {
+        height: 360px;
+      }
+
+      .hero-card img {
+        height: 280px;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .join-sticky {
+        left: 18px;
+        right: auto;
+        bottom: 85px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#home" class="logo">Iron<span>Pulse</span></a>
+
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#membership">Membership</a>
+      <a href="#transformation">Transformation</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <div class="section-kicker">Los Angeles Premium Fitness Club</div>
+      <h1>Train Hard.<br><span>Live Strong.</span></h1>
+      <p>IronPulse Fitness Club is built for people who want serious results. Train with elite coaches, high-energy classes, premium equipment, and a community that pushes you to become stronger every day.</p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-red">Start Free Trial <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#programs" class="btn btn-outline">View Programs</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong class="counter" data-target="2500">0</strong><span>Members</span>
+        </div>
+        <div class="stat">
+          <strong class="counter" data-target="15">0</strong><span>Expert Trainers</span>
+        </div>
+        <div class="stat">
+          <strong class="counter" data-target="40">0</strong><span>Weekly Classes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80" alt="Athlete training in gym">
+      <h3>Built For Performance</h3>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-image reveal">
+      <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1000&q=80" alt="Modern gym facility">
+      <div class="about-badge">Premium Training Facility</div>
+    </div>
+
+    <div class="about-content reveal">
+      <div class="section-kicker">About IronPulse</div>
+      <h2 class="section-title">Not Just A Gym. A Training Culture.</h2>
+      <p class="section-text">Our mission is simple: help Los Angeles move stronger, look better, and live with more confidence. From first-time members to competitive athletes, IronPulse gives every person the coaching, structure, and environment needed to transform.</p>
+
+      <div class="highlights">
+        <div class="highlight">
+          <i class="fa-solid fa-dumbbell"></i>
+          <h4>Strength Training</h4>
+          <p>Elite equipment and smart programming for real power.</p>
+        </div>
+        <div class="highlight">
+          <i class="fa-solid fa-user-shield"></i>
+          <h4>Personal Coaching</h4>
+          <p>One-on-one guidance built around your exact goals.</p>
+        </div>
+        <div class="highlight">
+          <i class="fa-solid fa-people-group"></i>
+          <h4>Group Classes</h4>
+          <p>High-energy sessions that keep you motivated.</p>
+        </div>
+        <div class="highlight">
+          <i class="fa-solid fa-apple-whole"></i>
+          <h4>Nutrition Guidance</h4>
+          <p>Simple nutrition support for lasting body composition changes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs" id="programs">
+    <div class="reveal">
+      <div class="section-kicker">Training Programs</div>
+      <h2 class="section-title">Choose Your Weapon</h2>
+      <p class="section-text">Every program is designed to build strength, burn fat, improve movement, and deliver measurable progress.</p>
+    </div>
+
+    <div class="program-grid">
+      <div class="program-card reveal">
+        <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?auto=format&fit=crop&w=900&q=80" alt="Strength training">
+        <div class="program-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        <h3>Strength Training</h3>
+        <p>Build muscle, power, and confidence with progressive strength systems.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+
+      <div class="program-card reveal">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="HIIT class">
+        <div class="program-icon"><i class="fa-solid fa-fire"></i></div>
+        <h3>HIIT Classes</h3>
+        <p>Explosive conditioning sessions for maximum calorie burn and stamina.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+
+      <div class="program-card reveal">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=80" alt="Personal training">
+        <div class="program-icon"><i class="fa-solid fa-user-check"></i></div>
+        <h3>Personal Training</h3>
+        <p>Custom coaching, accountability, and expert programming.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+
+      <div class="program-card reveal">
+        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=80" alt="Boxing fitness">
+        <div class="program-icon"><i class="fa-solid fa-hand-fist"></i></div>
+        <h3>Boxing Fitness</h3>
+        <p>Train speed, footwork, conditioning, and full-body athletic power.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+
+      <div class="program-card reveal">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=80" alt="Yoga and mobility">
+        <div class="program-icon"><i class="fa-solid fa-spa"></i></div>
+        <h3>Yoga & Mobility</h3>
+        <p>Recover better, move smoother, and improve flexibility.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+
+      <div class="program-card reveal">
+        <img src="https://images.unsplash.com/photo-1571019613914-85f342c6a11e?auto=format&fit=crop&w=900&q=80" alt="Weight loss program">
+        <div class="program-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Weight Loss</h3>
+        <p>Structured training and nutrition support for visible results.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trainers" id="trainers">
+    <div class="reveal">
+      <div class="section-kicker">Elite Coaches</div>
+      <h2 class="section-title">Meet The Trainers</h2>
+    </div>
+
+    <div class="trainer-grid">
+      <div class="trainer reveal">
+        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80" alt="Marcus Reed trainer">
+        <div class="trainer-content">
+          <h3>Marcus Reed</h3>
+          <strong>Strength Coach • 10 Years</strong>
+          <p>Marcus specializes in strength, muscle building, and athletic performance.</p>
+          <div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook-f"></i><i class="fab fa-x-twitter"></i></div>
+        </div>
+      </div>
+
+      <div class="trainer reveal">
+        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80" alt="Ava Martinez trainer">
+        <div class="trainer-content">
+          <h3>Ava Martinez</h3>
+          <strong>HIIT Specialist • 8 Years</strong>
+          <p>Ava creates fast, intense, and motivating workouts for fat loss.</p>
+          <div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook-f"></i><i class="fab fa-youtube"></i></div>
+        </div>
+      </div>
+
+      <div class="trainer reveal">
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&q=80" alt="Derek Stone trainer">
+        <div class="trainer-content">
+          <h3>Derek Stone</h3>
+          <strong>Boxing Coach • 12 Years</strong>
+          <p>Derek blends boxing technique, power conditioning, and discipline.</p>
+          <div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook-f"></i><i class="fab fa-tiktok"></i></div>
+        </div>
+      </div>
+
+      <div class="trainer reveal">
+        <img src="https://images.unsplash.com/photo-1609899464726-209befaac5f2?auto=format&fit=crop&w=700&q=80" alt="Sofia Lane trainer">
+        <div class="trainer-content">
+          <h3>Sofia Lane</h3>
+          <strong>Mobility Coach • 7 Years</strong>
+          <p>Sofia helps members improve flexibility, recovery, and movement quality.</p>
+          <div class="socials"><i class="fab fa-instagram"></i><i class="fab fa-facebook-f"></i><i class="fab fa-linkedin-in"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="membership" id="membership">
+    <div class="reveal">
+      <div class="section-kicker">Membership</div>
+      <h2 class="section-title">Pick Your Level</h2>
+      <p class="section-text">Flexible plans for every goal. No pressure. Just progress.</p>
+    </div>
+
+    <div class="pricing">
+      <div class="plan reveal">
+        <h3>Basic Plan</h3>
+        <div class="price">$49<span>/month</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Gym floor access</li>
+          <li><i class="fa-solid fa-check"></i>Locker room access</li>
+          <li><i class="fa-solid fa-check"></i>2 group classes monthly</li>
+          <li><i class="fa-solid fa-check"></i>Fitness assessment</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Join Now</a>
+      </div>
+
+      <div class="plan featured reveal">
+        <h3>Pro Plan</h3>
+        <div class="price">$89<span>/month</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Unlimited gym access</li>
+          <li><i class="fa-solid fa-check"></i>Unlimited group classes</li>
+          <li><i class="fa-solid fa-check"></i>Monthly body scan</li>
+          <li><i class="fa-solid fa-check"></i>Nutrition guidance</li>
+        </ul>
+        <a href="#contact" class="btn btn-red">Join Now</a>
+      </div>
+
+      <div class="plan reveal">
+        <h3>Elite Plan</h3>
+        <div class="price">$149<span>/month</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Everything in Pro</li>
+          <li><i class="fa-solid fa-check"></i>4 personal sessions monthly</li>
+          <li><i class="fa-solid fa-check"></i>Custom training plan</li>
+          <li><i class="fa-solid fa-check"></i>Priority class booking</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="transformation" id="transformation">
+    <div class="transform-gallery reveal">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Fitness transformation workout">
+      <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=800&q=80" alt="Strong fitness result">
+    </div>
+
+    <div class="reveal">
+      <div class="section-kicker">Transformation</div>
+      <h2 class="section-title">Your Strongest Chapter Starts Here.</h2>
+      <p class="section-text">Members come to IronPulse for a gym. They stay because their body, mindset, and confidence change. Our transformation system combines coaching, accountability, progressive training, and a no-excuses environment.</p>
+
+      <div class="success-list">
+        <div class="success-item"><i class="fa-solid fa-circle-check"></i><p>Average members train 3.8 times per week within the first 60 days.</p></div>
+        <div class="success-item"><i class="fa-solid fa-circle-check"></i><p>Custom plans help clients build muscle, lose fat, and stay consistent.</p></div>
+        <div class="success-item"><i class="fa-solid fa-circle-check"></i><p>Weekly coaching support keeps every transformation focused and measurable.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule" id="schedule">
+    <div class="reveal">
+      <div class="section-kicker">Weekly Schedule</div>
+      <h2 class="section-title">Class Lineup</h2>
+    </div>
+
+    <div class="schedule-table reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6:00 AM</td>
+            <td>HIIT</td>
+            <td>Strength</td>
+            <td>Boxing</td>
+            <td>HIIT</td>
+            <td>Strength</td>
+            <td>Mobility</td>
+          </tr>
+          <tr>
+            <td>9:00 AM</td>
+            <td>Yoga</td>
+            <td>Personal Training</td>
+            <td>Mobility</td>
+            <td>Boxing</td>
+            <td>Yoga</td>
+            <td>HIIT</td>
+          </tr>
+          <tr>
+            <td>12:00 PM</td>
+            <td>Strength</td>
+            <td>HIIT</td>
+            <td>Personal Training</td>
+            <td>Mobility</td>
+            <td>Boxing</td>
+            <td>Strength</td>
+          </tr>
+          <tr>
+            <td>6:00 PM</td>
+            <td>Boxing</td>
+            <td>Yoga</td>
+            <td>Strength</td>
+            <td>HIIT</td>
+            <td>Personal Training</td>
+            <td>Open Gym</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="reveal">
+      <div class="section-kicker">Member Reviews</div>
+      <h2 class="section-title">Real Results</h2>
+    </div>
+
+    <div class="review-grid">
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>IronPulse gave me structure and discipline. I lost 28 pounds and feel stronger than ever.</p>
+        <h4>Jason Miller</h4><span>Goal Achieved: Weight Loss</span>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>The coaches actually care. My strength numbers improved every month.</p>
+        <h4>Emily Carter</h4><span>Goal Achieved: Strength</span>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>The boxing classes are intense, fun, and addictive. Best gym energy in LA.</p>
+        <h4>Ryan Brooks</h4><span>Goal Achieved: Conditioning</span>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>I joined for fitness, but stayed for the community and accountability.</p>
+        <h4>Lauren Scott</h4><span>Goal Achieved: Consistency</span>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>The Elite Plan completely changed my training and nutrition habits.</p>
+        <h4>Daniel Kim</h4><span>Goal Achieved: Muscle Gain</span>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>Clean facility, serious coaches, premium equipment, and powerful classes.</p>
+        <h4>Megan Hayes</h4><span>Goal Achieved: Full Transformation</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="reveal">
+      <div class="section-kicker">FAQ</div>
+      <h2 class="section-title">Questions Before You Train?</h2>
+    </div>
+
+    <div class="faq-wrap reveal">
+      <div class="faq-item">
+        <div class="faq-question">Do you offer a free trial? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes. New members can request a free trial session through the contact form.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is IronPulse beginner friendly? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Absolutely. Our coaches help beginners train safely and confidently.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you offer personal training? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes. We offer one-on-one coaching through our Personal Training and Elite plans.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Are classes included in membership? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Pro and Elite members receive unlimited group classes. Basic members receive limited monthly access.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you provide nutrition guidance? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes. Pro and Elite plans include nutrition support to help with body composition goals.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What should I bring for my first workout? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Bring workout clothes, training shoes, a water bottle, and a ready-to-work mindset.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you have boxing classes? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes. Boxing Fitness is one of our most popular programs.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I cancel my membership? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes. Memberships are flexible and cancellation support is available through our front desk.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-form reveal">
+      <div class="section-kicker">Start Today</div>
+      <h2 class="section-title">Claim Your Trial</h2>
+
+      <form>
+        <div class="form-grid">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="tel" placeholder="Phone" required>
+          <input type="text" placeholder="Fitness Goal">
+          <select required>
+            <option value="">Preferred Program</option>
+            <option>Strength Training</option>
+            <option>HIIT Classes</option>
+            <option>Personal Training</option>
+            <option>Boxing Fitness</option>
+            <option>Yoga & Mobility</option>
+            <option>Weight Loss Program</option>
+          </select>
+          <select>
+            <option value="">Membership Interest</option>
+            <option>Basic Plan</option>
+            <option>Pro Plan</option>
+            <option>Elite Plan</option>
+          </select>
+          <textarea placeholder="Message"></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-red">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+
+    <div class="contact-info reveal">
+      <div class="info-box">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Phone</h4>
+        <p>+1 (323) 555-0198</p>
+      </div>
+      <div class="info-box">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email</h4>
+        <p>hello@ironpulsefitness.com</p>
+      </div>
+      <div class="info-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <h4>Gym Address</h4>
+        <p>8200 Sunset Boulevard, Los Angeles, CA 90046, USA</p>
+      </div>
+      <div class="info-box">
+        <i class="fa-solid fa-clock"></i>
+        <h4>Opening Hours</h4>
+        <p>Monday - Friday: 5:00 AM - 11:00 PM<br>Saturday - Sunday: 7:00 AM - 8:00 PM</p>
+      </div>
+      <div class="map">Google Maps</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Iron<span>Pulse</span></h3>
+        <p>Premium fitness club in Los Angeles built for strength, transformation, and serious results.</p>
+        <div class="socials">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-tiktok"></i>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#membership">Membership</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <h4>Programs</h4>
+        <a href="#programs">Strength Training</a>
+        <a href="#programs">HIIT Classes</a>
+        <a href="#programs">Boxing Fitness</a>
+        <a href="#programs">Yoga & Mobility</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>+1 (323) 555-0198</p>
+        <p>hello@ironpulsefitness.com</p>
+        <p>8200 Sunset Boulevard, Los Angeles, CA</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 IronPulse Fitness Club. All Rights Reserved.
+    </div>
+  </footer>
+
+  <a href="#contact" class="join-sticky">Join Now</a>
+  <a href="#home" class="back-top" id="backTop"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
+    const hamburgerIcon = hamburger.querySelector("i");
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      hamburgerIcon.classList.toggle("fa-bars");
+      hamburgerIcon.classList.toggle("fa-xmark");
+    });
+
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        hamburgerIcon.classList.add("fa-bars");
+        hamburgerIcon.classList.remove("fa-xmark");
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+      revealElements.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+          el.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+    const counters = document.querySelectorAll(".counter");
+    let countersStarted = false;
+
+    const startCounters = () => {
+      if (countersStarted) return;
+
+      const statsSection = document.querySelector(".hero-stats");
+      const position = statsSection.getBoundingClientRect().top;
+
+      if (position < window.innerHeight) {
+        countersStarted = true;
+
+        counters.forEach(counter => {
+          const target = +counter.getAttribute("data-target");
+          let count = 0;
+          const speed = target / 90;
+
+          const update = () => {
+            count += speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count).toLocaleString() + "+";
+              requestAnimationFrame(update);
+            } else {
+              counter.innerText = target.toLocaleString() + "+";
+            }
+          };
+
+          update();
+        });
+      }
+    };
+
+    window.addEventListener("scroll", startCounters);
+    window.addEventListener("load", startCounters);
+
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        const item = question.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+    });
+
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you! IronPulse Fitness Club will contact you soon.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
