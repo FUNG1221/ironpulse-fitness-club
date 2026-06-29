@@ -1014,166 +1014,552 @@
         bottom: 85px;
       }
     }
-    /* ========================= */
-/* Premium Mobile Optimization */
-/* ========================= */
+    
+/* ========================================================= */
+/* Mobile One-Screen Premium Layout Fix                      */
+/* Keeps desktop unchanged. Optimized for iPhone/Android.    */
+/* ========================================================= */
 
-@media (max-width:768px){
+@media (max-width: 768px){
 
-section{
-    padding:80px 20px;
-}
-
-.hero{
-    min-height:85vh;
-    padding:120px 20px 60px;
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:35px;
-}
-
-.hero h1{
-    font-size:clamp(52px,12vw,72px);
-    line-height:.95;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:16px;
-    margin:0 auto 28px;
-}
-
-.hero-buttons{
-    flex-direction:column;
-    width:100%;
-}
-
-.hero-buttons .btn{
-    width:100%;
-    justify-content:center;
-}
-
-.hero-card{
+  html, body{
     max-width:100%;
-    transform:none;
-}
+    overflow-x:hidden;
+  }
 
-.hero-card img{
-    height:260px;
-}
+  body{
+    padding-bottom:0;
+  }
 
-.hero-stats{
-    grid-template-columns:1fr;
-}
+  header{
+    height:88px;
+    padding:18px 28px;
+  }
 
-.stat{
-    border-right:none;
-    border-bottom:1px solid rgba(255,255,255,.12);
-}
+  nav{
+    top:88px;
+    height:calc(100svh - 88px);
+  }
 
-.stat:last-child{
-    border-bottom:none;
-}
+  .logo{
+    font-size:30px;
+  }
 
-.about,
-.transformation,
-.contact{
-    grid-template-columns:1fr;
-}
-
-.about-image img{
-    height:340px;
-}
-
-.highlights{
-    grid-template-columns:1fr;
-}
-
-.program-grid{
-    grid-template-columns:1fr;
-}
-
-.program-card{
-    min-height:380px;
-}
-
-.program-card h3{
+  .hamburger{
+    width:58px;
+    height:58px;
     font-size:28px;
-}
+  }
 
-.trainer-grid{
-    grid-template-columns:1fr;
-}
-
-.trainer img{
-    height:300px;
-}
-
-.pricing{
-    grid-template-columns:1fr;
-}
-
-.plan.featured{
-    transform:none;
-}
-
-.review-grid{
-    grid-template-columns:1fr;
-}
-
-.transform-gallery{
-    grid-template-columns:1fr;
-}
-
-.transform-gallery img{
-    height:260px;
-}
-
-.footer-grid{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-.footer-grid .socials{
+  section{
+    min-height:100svh;
+    padding:110px 30px 36px;
+    display:flex;
+    flex-direction:column;
     justify-content:center;
-}
+  }
 
-.contact-info{
+  .section-kicker{
+    font-size:18px;
+    letter-spacing:7px;
+    margin-bottom:24px;
+  }
+
+  .section-title{
+    font-size:clamp(52px, 14vw, 78px);
+    line-height:.92;
+    margin-bottom:28px;
+  }
+
+  .section-text{
+    font-size:28px;
+    line-height:1.55;
+  }
+
+  .hero{
+    min-height:100svh;
+    padding:120px 30px 36px;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:clamp(64px, 17vw, 96px);
+    line-height:.88;
+  }
+
+  .hero p{
+    font-size:22px;
+    line-height:1.55;
+  }
+
+  .hero-buttons{
+    gap:14px;
+    margin-bottom:24px;
+  }
+
+  .hero-card{
+    display:none;
+  }
+
+  .hero-stats{
+    margin-top:8px;
+  }
+
+  .stat{
+    padding:18px;
+  }
+
+  .stat strong{
+    font-size:36px;
+  }
+
+  .stat span{
+    font-size:15px;
+  }
+
+  .about{
+    justify-content:flex-start;
+  }
+
+  .about-image{
+    display:none;
+  }
+
+  .about-content{
+    width:100%;
+  }
+
+  .highlights{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
     margin-top:30px;
-}
+  }
 
-.contact-form{
-    padding:25px;
-}
+  .highlight{
+    min-height:180px;
+    padding:18px;
+  }
 
-.form-grid{
-    grid-template-columns:1fr;
-}
+  .highlight i{
+    font-size:30px;
+    margin-bottom:10px;
+  }
 
-.join-sticky{
-    right:15px;
-    bottom:85px;
-    padding:14px 18px;
-    font-size:14px;
-}
+  .highlight h4{
+    font-size:20px;
+  }
 
-.back-top{
-    right:15px;
-    bottom:20px;
-}
+  .highlight p{
+    font-size:15px;
+    line-height:1.45;
+  }
 
-.logo{
+  .programs,
+  .trainers,
+  .membership,
+  .testimonials{
+    justify-content:flex-start;
+  }
+
+  .program-grid,
+  .trainer-grid,
+  .pricing,
+  .review-grid{
+    display:flex !important;
+    grid-template-columns:none !important;
+    overflow-x:auto;
+    gap:20px;
+    padding:8px 2px 22px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .program-grid::-webkit-scrollbar,
+  .trainer-grid::-webkit-scrollbar,
+  .pricing::-webkit-scrollbar,
+  .review-grid::-webkit-scrollbar{
+    height:6px;
+  }
+
+  .program-grid::-webkit-scrollbar-thumb,
+  .trainer-grid::-webkit-scrollbar-thumb,
+  .pricing::-webkit-scrollbar-thumb,
+  .review-grid::-webkit-scrollbar-thumb{
+    background:var(--red);
+    border-radius:999px;
+  }
+
+  .program-card,
+  .trainer,
+  .plan,
+  .review{
+    flex:0 0 calc(100vw - 60px);
+    scroll-snap-align:center;
+    min-width:calc(100vw - 60px);
+  }
+
+  .program-card{
+    min-height:58svh;
+    padding:32px;
+  }
+
+  .program-card h3{
+    font-size:46px;
+    line-height:.95;
+  }
+
+  .program-card p{
+    font-size:21px;
+    line-height:1.45;
+  }
+
+  .program-card a{
+    font-size:22px;
+  }
+
+  .program-icon{
+    width:78px;
+    height:78px;
+    font-size:32px;
+  }
+
+  .trainer img{
+    height:44svh;
+  }
+
+  .trainer-content{
+    padding:28px;
+  }
+
+  .trainer h3{
+    font-size:44px;
+  }
+
+  .trainer strong{
+    font-size:22px;
+  }
+
+  .trainer p{
+    font-size:21px;
+    line-height:1.45;
+  }
+
+  .socials{
+    gap:16px;
+    margin-top:18px;
+  }
+
+  .socials a,
+  .socials i{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+
+  .plan{
+    padding:42px 34px;
+    min-height:66svh;
+  }
+
+  .plan h3{
+    font-size:52px;
+  }
+
+  .price{
+    font-size:76px;
+    margin:24px 0;
+  }
+
+  .plan li{
+    font-size:23px;
+    line-height:1.35;
+    padding:14px 0;
+  }
+
+  .plan .btn{
+    width:100%;
+    justify-content:center;
+    margin-top:12px;
+  }
+
+  .transformation{
+    justify-content:flex-start;
+  }
+
+  .transform-gallery{
+    order:2;
+    display:flex;
+    overflow-x:auto;
+    gap:18px;
+    scroll-snap-type:x mandatory;
+    margin-top:26px;
+  }
+
+  .transform-gallery img{
+    flex:0 0 calc(100vw - 60px);
+    min-width:calc(100vw - 60px);
+    height:36svh;
+    scroll-snap-align:center;
+  }
+
+  .success-list{
+    gap:12px;
+    margin-top:22px;
+  }
+
+  .success-item p{
+    font-size:19px;
+    line-height:1.4;
+  }
+
+  .schedule{
+    justify-content:flex-start;
+  }
+
+  .schedule-table{
+    max-height:64svh;
+    overflow:auto;
+  }
+
+  table{
+    min-width:720px;
+  }
+
+  th,td{
+    padding:16px;
+    font-size:16px;
+  }
+
+  .review{
+    min-height:48svh;
+    padding:42px 34px;
+  }
+
+  .stars{
     font-size:26px;
+    margin-bottom:24px;
+  }
+
+  .review p{
+    font-size:25px;
+    line-height:1.5;
+  }
+
+  .review h4{
+    font-size:30px;
+  }
+
+  .review span{
+    font-size:20px;
+  }
+
+  .faq{
+    justify-content:flex-start;
+  }
+
+  .faq-wrap{
+    margin-top:30px;
+  }
+
+  .faq-question{
+    padding:22px;
+    font-size:20px;
+  }
+
+  .faq-answer{
+    font-size:18px;
+  }
+
+  .contact{
+    justify-content:flex-start;
+  }
+
+  .contact-form,
+  .contact-info{
+    width:100%;
+  }
+
+  .contact-form{
+    padding:28px;
+  }
+
+  input,select,textarea{
+    padding:18px;
+    font-size:17px;
+  }
+
+  textarea{
+    min-height:110px;
+  }
+
+  .privacy-consent{
+    font-size:15px;
+  }
+
+  .contact-info{
+    gap:14px;
+  }
+
+  .info-box{
+    padding:20px;
+  }
+
+  .info-box h4{
+    font-size:20px;
+  }
+
+  .info-box p{
+    font-size:17px;
+  }
+
+  .map{
+    height:180px;
+    font-size:32px;
+  }
+
+  footer{
+    padding:60px 30px 32px;
+  }
+
+  .footer-grid{
+    gap:26px;
+  }
+
+  footer h3{
+    font-size:42px;
+  }
+
+  footer h4{
+    font-size:26px;
+  }
+
+  footer p,
+  footer a{
+    font-size:18px;
+  }
+
+  .join-sticky{
+    display:none !important;
+  }
+
+  .back-top{
+    width:58px;
+    height:58px;
+    right:20px;
+    bottom:28px;
+    font-size:22px;
+  }
+
 }
 
-.section-title{
-    font-size:48px;
-    line-height:1;
-}
+@media (max-width: 430px){
+
+  header{
+    height:84px;
+    padding:16px 24px;
+  }
+
+  nav{
+    top:84px;
+    height:calc(100svh - 84px);
+  }
+
+  section{
+    padding:105px 26px 32px;
+  }
+
+  .logo{
+    font-size:26px;
+  }
+
+  .hamburger{
+    width:54px;
+    height:54px;
+  }
+
+  .section-kicker{
+    font-size:15px;
+    letter-spacing:6px;
+  }
+
+  .section-title{
+    font-size:clamp(44px, 13vw, 64px);
+  }
+
+  .section-text{
+    font-size:22px;
+  }
+
+  .hero h1{
+    font-size:clamp(56px, 16vw, 78px);
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .program-card,
+  .trainer,
+  .plan,
+  .review,
+  .transform-gallery img{
+    flex-basis:calc(100vw - 52px);
+    min-width:calc(100vw - 52px);
+  }
+
+  .highlights{
+    grid-template-columns:1fr;
+  }
+
+  .highlight{
+    min-height:auto;
+  }
+
+  .program-card{
+    min-height:54svh;
+  }
+
+  .program-card h3{
+    font-size:36px;
+  }
+
+  .program-card p{
+    font-size:18px;
+  }
+
+  .trainer img{
+    height:38svh;
+  }
+
+  .trainer h3{
+    font-size:36px;
+  }
+
+  .trainer strong,
+  .trainer p{
+    font-size:18px;
+  }
+
+  .plan h3{
+    font-size:42px;
+  }
+
+  .price{
+    font-size:60px;
+  }
+
+  .plan li{
+    font-size:18px;
+  }
+
+  .review p{
+    font-size:20px;
+  }
 
 }
-  
-    .privacy-consent{
+
+.privacy-consent{
       display:flex;
       align-items:flex-start;
       gap:10px;
