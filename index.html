@@ -1584,8 +1584,8 @@
 
 
 /* ========================================================= */
-/* Safe Mobile Membership Carousel                           */
-/* Swipe cards. Long press/tap hint toggles all plans.        */
+/* Mobile Membership Stacked Coverflow                       */
+/* Real overlapping cards: swipe / tap side card / long press */
 /* ========================================================= */
 @media (max-width: 768px){
 
@@ -1594,79 +1594,149 @@
   }
 
   .membership .pricing{
-    display:flex !important;
+    position:relative;
+    display:block !important;
     grid-template-columns:none !important;
-    gap:18px;
-    overflow-x:auto !important;
-    overflow-y:visible;
-    padding:20px 6px 28px;
-    margin-top:30px;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    touch-action:pan-x pan-y;
-    perspective:none !important;
-    min-height:auto !important;
-    justify-content:flex-start !important;
-  }
-
-  .membership .pricing::-webkit-scrollbar{
-    height:6px;
-  }
-
-  .membership .pricing::-webkit-scrollbar-thumb{
-    background:var(--red);
-    border-radius:999px;
+    width:100%;
+    height:58svh;
+    min-height:520px;
+    margin-top:34px;
+    padding:0;
+    overflow:visible !important;
+    perspective:1200px;
+    touch-action:pan-y;
   }
 
   .membership .plan{
-    position:relative !important;
-    left:auto !important;
-    top:auto !important;
-    transform:none !important;
-    opacity:1 !important;
-    filter:none !important;
-    pointer-events:auto !important;
-    flex:0 0 82%;
-    min-width:82%;
-    max-width:82%;
-    min-height:auto;
-    padding:34px 26px;
-    scroll-snap-align:center;
-    box-shadow:0 25px 80px rgba(0,0,0,.45);
+    position:absolute !important;
+    left:50%;
+    top:50%;
+    width:74vw;
+    min-width:74vw;
+    max-width:74vw;
+    min-height:500px;
+    padding:32px 26px;
+    opacity:0;
+    pointer-events:none;
+    transform:translate(-50%, -50%) scale(.76);
+    filter:brightness(.45) blur(1px);
+    box-shadow:0 35px 120px rgba(0,0,0,.65);
+    transition:
+      transform .45s cubic-bezier(.2,.8,.2,1),
+      opacity .45s ease,
+      filter .45s ease,
+      border-color .45s ease;
+    transform-style:preserve-3d;
+    will-change:transform, opacity;
+  }
+
+  .membership .plan.stack-active{
+    z-index:5;
+    opacity:1;
+    pointer-events:auto;
+    filter:brightness(1);
+    transform:translate(-50%, -50%) scale(1);
+  }
+
+  .membership .plan.stack-left{
+    z-index:3;
+    opacity:.62;
+    pointer-events:auto;
+    filter:brightness(.7) blur(.3px);
+    transform:translate(calc(-50% - 28vw), -50%) scale(.82) rotateY(22deg);
+  }
+
+  .membership .plan.stack-right{
+    z-index:3;
+    opacity:.62;
+    pointer-events:auto;
+    filter:brightness(.7) blur(.3px);
+    transform:translate(calc(-50% + 28vw), -50%) scale(.82) rotateY(-22deg);
+  }
+
+  .membership .plan.stack-back{
+    z-index:1;
+    opacity:.18;
+    transform:translate(-50%, -50%) scale(.68);
   }
 
   .membership .plan.featured{
-    transform:none !important;
+    transform:translate(-50%, -50%) scale(.76);
+  }
+
+  .membership .plan.featured.stack-active{
+    transform:translate(-50%, -50%) scale(1);
+  }
+
+  .membership .plan.featured.stack-left{
+    transform:translate(calc(-50% - 28vw), -50%) scale(.82) rotateY(22deg);
+  }
+
+  .membership .plan.featured.stack-right{
+    transform:translate(calc(-50% + 28vw), -50%) scale(.82) rotateY(-22deg);
+  }
+
+  .membership .plan h3{
+    font-size:40px;
+    line-height:1;
+  }
+
+  .membership .price{
+    font-size:56px;
+    margin:18px 0;
+  }
+
+  .membership .plan li{
+    font-size:17px;
+    line-height:1.38;
+    padding:11px 0;
+  }
+
+  .membership .plan .btn{
+    width:100%;
+    justify-content:center;
+    padding:15px 20px;
   }
 
   .membership .pricing.show-all{
     display:grid !important;
     grid-template-columns:1fr;
-    overflow:visible !important;
     gap:20px;
+    height:auto;
+    min-height:auto;
+    overflow:visible !important;
+    perspective:none;
   }
 
-  .membership .pricing.show-all .plan{
-    flex:0 0 100%;
+  .membership .pricing.show-all .plan,
+  .membership .pricing.show-all .plan.featured{
+    position:relative !important;
+    left:auto;
+    top:auto;
+    width:100%;
     min-width:100%;
     max-width:100%;
+    min-height:auto;
+    opacity:1;
+    pointer-events:auto;
+    filter:none;
+    transform:none !important;
   }
 
   .membership .pricing-hint{
     display:block;
-    width:100%;
     text-align:center;
     color:var(--gray);
-    font-size:14px;
+    font-size:13px;
     font-weight:900;
-    letter-spacing:1.5px;
+    letter-spacing:1.4px;
     text-transform:uppercase;
-    margin-top:0;
-    cursor:pointer;
+    margin-top:8px;
+    padding:12px 6px;
     user-select:none;
-    padding:12px 8px;
+    cursor:pointer;
     position:relative;
-    z-index:20;
+    z-index:50;
   }
 
   .membership .pricing-hint span{
@@ -1676,29 +1746,11 @@
   .membership .pricing-hint::after{
     content:"";
     display:block;
-    width:60px;
+    width:68px;
     height:3px;
     background:var(--red);
-    margin:10px auto 0;
     border-radius:999px;
-  }
-
-  .membership .plan h3{
-    font-size:42px;
-  }
-
-  .membership .price{
-    font-size:58px;
-  }
-
-  .membership .plan li{
-    font-size:18px;
-    line-height:1.4;
-  }
-
-  .membership .plan .btn{
-    width:100%;
-    justify-content:center;
+    margin:10px auto 0;
   }
 
   .join-sticky{
@@ -1714,8 +1766,51 @@
   }
 }
 
+@media (max-width: 430px){
+  .membership .pricing{
+    height:56svh;
+    min-height:480px;
+  }
+
+  .membership .plan{
+    width:76vw;
+    min-width:76vw;
+    max-width:76vw;
+    min-height:460px;
+    padding:28px 22px;
+  }
+
+  .membership .plan.stack-left{
+    transform:translate(calc(-50% - 30vw), -50%) scale(.8) rotateY(23deg);
+  }
+
+  .membership .plan.stack-right{
+    transform:translate(calc(-50% + 30vw), -50%) scale(.8) rotateY(-23deg);
+  }
+
+  .membership .plan.featured.stack-left{
+    transform:translate(calc(-50% - 30vw), -50%) scale(.8) rotateY(23deg);
+  }
+
+  .membership .plan.featured.stack-right{
+    transform:translate(calc(-50% + 30vw), -50%) scale(.8) rotateY(-23deg);
+  }
+
+  .membership .plan h3{
+    font-size:34px;
+  }
+
+  .membership .price{
+    font-size:48px;
+  }
+
+  .membership .plan li{
+    font-size:15px;
+  }
+}
+
 @media (min-width: 769px){
-  .pricing-hint{ display:none; }
+  .pricing-hint{display:none;}
 }
 
 </style>
@@ -2008,7 +2103,7 @@
         <a href="#contact" class="btn btn-outline">Join Now</a>
       </div>
     </div>
-    <div class="pricing-hint">Swipe left or right • <span>Long press / tap here</span> to view all plans</div>
+    <div class="pricing-hint">Swipe left / right • Tap side card • <span>Long press</span> to open all plans</div>
   </section>
 
   <section class="transformation" id="transformation">
@@ -2397,37 +2492,89 @@
     });
   
 
-    // Safe mobile membership interaction
-    const pricingArea = document.querySelector(".membership .pricing");
-    const pricingHint = document.querySelector(".membership .pricing-hint");
-    let membershipPressTimer = null;
+    // Mobile stacked membership coverflow
+    const stackedPricing = document.querySelector(".membership .pricing");
+    const stackedPlans = stackedPricing ? Array.from(stackedPricing.querySelectorAll(".plan")) : [];
+    const stackedHint = document.querySelector(".membership .pricing-hint");
+    let stackedIndex = 1; // Start from Pro Plan
+    let stackedStartX = 0;
+    let stackedLongPress = null;
 
-    function toggleAllMembershipPlans(){
-      if(!pricingArea) return;
-      pricingArea.classList.toggle("show-all");
-      if(pricingHint){
-        pricingHint.innerHTML = pricingArea.classList.contains("show-all")
-          ? 'Showing all plans • <span>Tap here</span> to return to slider'
-          : 'Swipe left or right • <span>Long press / tap here</span> to view all plans';
+    function renderStackedMembership(){
+      if(!stackedPricing || !stackedPlans.length) return;
+
+      stackedPlans.forEach((plan, i) => {
+        plan.classList.remove("stack-active", "stack-left", "stack-right", "stack-back");
+
+        const leftIndex = (stackedIndex - 1 + stackedPlans.length) % stackedPlans.length;
+        const rightIndex = (stackedIndex + 1) % stackedPlans.length;
+
+        if(i === stackedIndex){
+          plan.classList.add("stack-active");
+        }else if(i === leftIndex){
+          plan.classList.add("stack-left");
+        }else if(i === rightIndex){
+          plan.classList.add("stack-right");
+        }else{
+          plan.classList.add("stack-back");
+        }
+      });
+    }
+
+    function openAllPlans(){
+      if(!stackedPricing) return;
+      stackedPricing.classList.toggle("show-all");
+      if(stackedHint){
+        stackedHint.innerHTML = stackedPricing.classList.contains("show-all")
+          ? 'Showing all plans • <span>Tap here</span> to return to stacked cards'
+          : 'Swipe left / right • Tap side card • <span>Long press</span> to open all plans';
       }
+      renderStackedMembership();
     }
 
-    if(pricingArea){
-      pricingArea.addEventListener("touchstart", () => {
-        membershipPressTimer = setTimeout(toggleAllMembershipPlans, 700);
+    if(stackedPricing && stackedPlans.length){
+      renderStackedMembership();
+
+      stackedPlans.forEach((plan, i) => {
+        plan.addEventListener("click", (e) => {
+          if(stackedPricing.classList.contains("show-all")) return;
+          if(!plan.classList.contains("stack-active")){
+            e.preventDefault();
+            stackedIndex = i;
+            renderStackedMembership();
+          }
+        });
+      });
+
+      stackedPricing.addEventListener("touchstart", (e) => {
+        stackedStartX = e.changedTouches[0].clientX;
+        stackedLongPress = setTimeout(openAllPlans, 750);
       }, {passive:true});
 
-      pricingArea.addEventListener("touchmove", () => {
-        clearTimeout(membershipPressTimer);
+      stackedPricing.addEventListener("touchmove", () => {
+        clearTimeout(stackedLongPress);
       }, {passive:true});
 
-      pricingArea.addEventListener("touchend", () => {
-        clearTimeout(membershipPressTimer);
+      stackedPricing.addEventListener("touchend", (e) => {
+        clearTimeout(stackedLongPress);
+        if(stackedPricing.classList.contains("show-all")) return;
+
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - stackedStartX;
+
+        if(Math.abs(diff) > 45){
+          if(diff < 0){
+            stackedIndex = (stackedIndex + 1) % stackedPlans.length;
+          }else{
+            stackedIndex = (stackedIndex - 1 + stackedPlans.length) % stackedPlans.length;
+          }
+          renderStackedMembership();
+        }
       }, {passive:true});
     }
 
-    if(pricingHint){
-      pricingHint.addEventListener("click", toggleAllMembershipPlans);
+    if(stackedHint){
+      stackedHint.addEventListener("click", openAllPlans);
     }
 
   </script>
