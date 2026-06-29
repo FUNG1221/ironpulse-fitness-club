@@ -1813,6 +1813,89 @@
   .pricing-hint{display:none;}
 }
 
+
+/* ========================================================= */
+/* Mobile Testimonials: Show All Reviews At Once             */
+/* No horizontal swipe for review cards on phone             */
+/* ========================================================= */
+@media (max-width: 768px){
+
+  .testimonials{
+    min-height:auto !important;
+    padding-top:110px !important;
+    padding-bottom:55px !important;
+    justify-content:flex-start !important;
+  }
+
+  .testimonials .section-title{
+    margin-bottom:18px !important;
+  }
+
+  .testimonials .review-grid{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:14px !important;
+    overflow:visible !important;
+    padding:0 !important;
+    margin-top:28px !important;
+    scroll-snap-type:none !important;
+  }
+
+  .testimonials .review{
+    min-width:0 !important;
+    flex:none !important;
+    min-height:auto !important;
+    padding:18px 14px !important;
+    scroll-snap-align:none !important;
+  }
+
+  .testimonials .stars{
+    font-size:17px !important;
+    margin-bottom:10px !important;
+    letter-spacing:1px !important;
+  }
+
+  .testimonials .review p{
+    font-size:14px !important;
+    line-height:1.45 !important;
+    margin-bottom:12px !important;
+  }
+
+  .testimonials .review h4{
+    font-size:17px !important;
+    margin-bottom:3px !important;
+  }
+
+  .testimonials .review span{
+    font-size:12px !important;
+    line-height:1.35 !important;
+  }
+}
+
+@media (max-width: 430px){
+
+  .testimonials .review-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:12px !important;
+  }
+
+  .testimonials .review{
+    padding:16px 12px !important;
+  }
+
+  .testimonials .review p{
+    font-size:13px !important;
+  }
+
+  .testimonials .review h4{
+    font-size:16px !important;
+  }
+
+  .testimonials .review span{
+    font-size:11px !important;
+  }
+}
+
 </style>
 </head>
 
