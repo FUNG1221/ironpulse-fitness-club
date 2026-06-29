@@ -1172,7 +1172,28 @@ section{
 }
 
 }
-  </style>
+  
+    .privacy-consent{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin:22px 0 18px;
+      color:#d8d8d8;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .privacy-consent input{
+      width:18px;
+      height:18px;
+      margin-top:2px;
+      accent-color:#e50914;
+    }
+    .privacy-consent a{
+      color:#fff;
+      text-decoration:underline;
+    }
+
+</style>
 </head>
 
 <body>
@@ -1661,7 +1682,13 @@ section{
           </select>
           <textarea placeholder="Message"></textarea>
         </div>
-        <br>
+        <div class="privacy-consent">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">
+            I agree to the <a href="#" target="_blank">Privacy Policy</a> as outlined on the website.
+          </label>
+        </div>
+
         <button type="submit" class="btn btn-red">Send Message <i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>
