@@ -39,6 +39,72 @@
     "openingHours": "Mo-Fr 05:00-23:00, Sa-Su 07:00-20:00",
     "priceRange": "$$"
   }
+
+
+    // Mobile membership carousel: swipe left/right, long press to expand all plans
+    const pricingCarousel = document.querySelector(".membership .pricing");
+    const membershipPlans = pricingCarousel ? Array.from(pricingCarousel.querySelectorAll(".plan")) : [];
+    let currentPlan = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let longPressTimer = null;
+
+    function updateMembershipCarousel(){
+      if(!pricingCarousel || !membershipPlans.length) return;
+      membershipPlans.forEach((plan, index) => {
+        plan.classList.remove("carousel-active","carousel-left","carousel-right","carousel-hidden");
+        if(index === currentPlan){
+          plan.classList.add("carousel-active");
+        }else if(index === (currentPlan - 1 + membershipPlans.length) % membershipPlans.length){
+          plan.classList.add("carousel-left");
+        }else if(index === (currentPlan + 1) % membershipPlans.length){
+          plan.classList.add("carousel-right");
+        }else{
+          plan.classList.add("carousel-hidden");
+        }
+      });
+    }
+
+    if(pricingCarousel && membershipPlans.length){
+      updateMembershipCarousel();
+
+      pricingCarousel.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        longPressTimer = setTimeout(() => {
+          pricingCarousel.classList.toggle("show-all");
+        }, 650);
+      }, {passive:true});
+
+      pricingCarousel.addEventListener("touchmove", () => {
+        clearTimeout(longPressTimer);
+      }, {passive:true});
+
+      pricingCarousel.addEventListener("touchend", (e) => {
+        clearTimeout(longPressTimer);
+        if(pricingCarousel.classList.contains("show-all")) return;
+
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+
+        if(Math.abs(diff) > 45){
+          if(diff < 0){
+            currentPlan = (currentPlan + 1) % membershipPlans.length;
+          }else{
+            currentPlan = (currentPlan - 1 + membershipPlans.length) % membershipPlans.length;
+          }
+          updateMembershipCarousel();
+        }
+      }, {passive:true});
+
+      membershipPlans.forEach((plan, index) => {
+        plan.addEventListener("click", () => {
+          if(pricingCarousel.classList.contains("show-all")) return;
+          currentPlan = index;
+          updateMembershipCarousel();
+        });
+      });
+    }
+
   </script>
 
   <style>
@@ -1579,6 +1645,129 @@
       text-decoration:underline;
     }
 
+
+/* ========================================================= */
+/* Mobile Membership Coverflow Carousel                      */
+/* Swipe left/right. Long press opens all plans.             */
+/* ========================================================= */
+@media (max-width: 768px){
+
+  .membership{
+    overflow:hidden;
+  }
+
+  .membership .pricing{
+    position:relative;
+    display:flex !important;
+    overflow:visible !important;
+    justify-content:center;
+    align-items:center;
+    min-height:62svh;
+    padding:0;
+    margin-top:36px;
+    perspective:1200px;
+    touch-action:pan-y;
+  }
+
+  .membership .plan{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:78vw;
+    min-width:78vw;
+    max-width:78vw;
+    min-height:56svh;
+    padding:34px 28px;
+    transform:translate(-50%, -50%) scale(.82);
+    opacity:.35;
+    filter:blur(.5px) brightness(.55);
+    transition:transform .45s ease, opacity .45s ease, filter .45s ease, z-index .45s ease;
+    box-shadow:0 35px 100px rgba(0,0,0,.55);
+    scroll-snap-align:none;
+    pointer-events:none;
+  }
+
+  .membership .plan.carousel-active{
+    z-index:5;
+    opacity:1;
+    filter:brightness(1);
+    transform:translate(-50%, -50%) scale(1);
+    pointer-events:auto;
+  }
+
+  .membership .plan.carousel-left{
+    z-index:3;
+    opacity:.55;
+    transform:translate(calc(-50% - 33vw), -50%) scale(.82) rotateY(18deg);
+  }
+
+  .membership .plan.carousel-right{
+    z-index:3;
+    opacity:.55;
+    transform:translate(calc(-50% + 33vw), -50%) scale(.82) rotateY(-18deg);
+  }
+
+  .membership .plan.carousel-hidden{
+    z-index:1;
+    opacity:0;
+    transform:translate(-50%, -50%) scale(.72);
+  }
+
+  .membership .pricing.show-all{
+    display:grid !important;
+    grid-template-columns:1fr;
+    gap:20px;
+    min-height:auto;
+    overflow:visible !important;
+    perspective:none;
+  }
+
+  .membership .pricing.show-all .plan{
+    position:relative;
+    left:auto;
+    top:auto;
+    width:100%;
+    min-width:100%;
+    max-width:100%;
+    min-height:auto;
+    transform:none !important;
+    opacity:1;
+    filter:none;
+    pointer-events:auto;
+  }
+
+  .membership .pricing-hint{
+    display:block;
+    text-align:center;
+    color:var(--gray);
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-top:-4px;
+  }
+
+  .membership .pricing-hint span{
+    color:var(--red);
+  }
+
+  .membership .plan h3{
+    font-size:44px;
+  }
+
+  .membership .price{
+    font-size:62px;
+  }
+
+  .membership .plan li{
+    font-size:18px;
+  }
+}
+
+@media (min-width: 769px){
+  .pricing-hint{ display:none; }
+}
+
 </style>
 </head>
 
@@ -1869,6 +2058,7 @@
         <a href="#contact" class="btn btn-outline">Join Now</a>
       </div>
     </div>
+    <div class="pricing-hint">Swipe left or right • <span>Long press</span> to open all plans</div>
   </section>
 
   <section class="transformation" id="transformation">
